@@ -1,0 +1,8 @@
+#post
+  %h2= @post[:title]
+  %time= @post[:timestamp]
+  %p= @post[:body]
+
+  %form{:method => 'delete'}
+    %input{:type => "hidden", :value => "delete"}
+    %input{:type => "submit", :value => "Delete"}

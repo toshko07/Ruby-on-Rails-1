@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Todor's blog
+    %link{:href => '/css/main.css', :rel => "stylesheet", :type => "text/css"}
+    %body
+      %header
+        %a{:href => '/'}
+          %h1 Todor's blog
+
+      #container= yield
+
+      %footer &copy; 2015 Todor Tabakov
+
