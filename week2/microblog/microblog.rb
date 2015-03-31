@@ -6,8 +6,10 @@ require './model/blog.rb'
 db = Blog.new()
 
 get '/' do
-	@posts = db.posts.reverse
-	haml :index	
+    puts db.is_empty?
+    #haml '%h1 Sorry, you don\'t have posts.'
+	  @posts = db.posts.reverse
+	  haml :index  
 end
 
 get '/post/:id' do
@@ -25,6 +27,6 @@ post '/new' do
 end
 
 delete '/post/:id' do
- # id = db.delete(params[:id])
+  db.delete(params[:id])
   redirect "/"
 end

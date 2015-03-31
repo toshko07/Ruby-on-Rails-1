@@ -19,7 +19,11 @@ class Blog
     end
 
     def delete id
-        @db.execute("DELETE * FROM posts WHERE id = #{id}")
+        @db.execute("DELETE FROM posts WHERE id = #{id}")
+    end
+
+    def is_empty?
+      @db.execute("SELECT COUNT(*) FROM posts") == 0
     end
 
     def post_array_to_hash(arr)
