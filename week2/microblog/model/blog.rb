@@ -23,7 +23,8 @@ class Blog
     end
 
     def is_empty?
-      @db.execute("SELECT COUNT(*) FROM posts") == 0
+      result = @db.execute("SELECT COUNT(*) FROM posts")
+      result == [[0]]
     end
 
     def post_array_to_hash(arr)

@@ -6,10 +6,12 @@ require './model/blog.rb'
 db = Blog.new()
 
 get '/' do
-    puts db.is_empty?
-    #haml '%h1 Sorry, you don\'t have posts.'
-	  @posts = db.posts.reverse
-	  haml :index  
+      if db.is_empty?
+        haml '%h1 Sorry, you don\'t have posts.'
+      else
+	      @posts = db.posts.reverse
+	      haml :index  
+      end
 end
 
 get '/post/:id' do
