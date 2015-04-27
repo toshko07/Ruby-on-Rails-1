@@ -3,6 +3,6 @@
   %time= @post[:timestamp]
   %p= @post[:body]
 
-  %form{:method => 'delete'}
-    %input{:type => "hidden", :value => "delete"}
-    %input{:type => "submit", :value => "Delete"}
+  %form{:method => 'post' }
+    %input{ :name => '_method', :type => 'hidden', :value => 'delete'}
+    %input{:type => 'submit', :value => 'Delete'}
