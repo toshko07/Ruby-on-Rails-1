@@ -1,0 +1,13 @@
+<p><%= "Lecture name: #{@lecture.name}" %></p>
+<p><%= "Lecture description: #{@lecture.body}" %></p>
+
+<%= button_to "Delete", @lecture, :method => :delete %>
+
+<h1>Edit</h1>
+<%= form_for @lecture do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name %><br />
+  <%= f.label :body %>
+  <%= f.text_field :body %><br />
+  <%= f.submit 'Update Lecture' %>
+<%end%>

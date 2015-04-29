@@ -1,0 +1,14 @@
+<%= form_for @lecture do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name %><br />
+  <%= f.label :body %>
+  <%= f.text_field :body %><br />
+  <%= f.submit %>
+<% end %>
+
+
+<% @lectures.each do |lecture| %>
+  <h1><%= link_to lecture.name, lecture %></h1>
+  <p><%= lecture.body %></p>
+  <hr>
+<%end%>
