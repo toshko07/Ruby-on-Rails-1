@@ -27,7 +27,7 @@ class LecturesController < ApplicationController
   def update
     @lecture = Lecture.find(params[:id])
     if @lecture.update_attributes(allowed_params)
-      redirect_to lectures_path, :notice => "Your message were updated"
+      redirect_to lectures_path, :notice => "Your lecture was updated!"
     else
       render :show
     end

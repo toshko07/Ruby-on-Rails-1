@@ -1,0 +1,6 @@
+<h1>Write solution for task: <%= @task.name %></h1>
+<%= form_for [@lecture, @task, @solution] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %><br>
+  <%= f.submit 'Save Solution'%>
+<% end %>

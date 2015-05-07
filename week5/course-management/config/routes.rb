@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-resources :lectures, only: [:index, :show, :create, :destroy, :update]
+resources :lectures do
+  resources :tasks do 
+    resources :solutions
+  end
+end
+
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

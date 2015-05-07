@@ -1,0 +1,5 @@
+<h2> Tasks for lecture: <%= @lecture.name %> </h2>
+<% @tasks.each do |task|%>
+  <p><%= link_to task.name, lecture_task_path(@lecture, task) %></p> 
+   <p><%= task.description%></p>
+<% end %>

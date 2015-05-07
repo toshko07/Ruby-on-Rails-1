@@ -1,0 +1,4 @@
+<h1>Solutions for task: <%= @task.name %><h1>
+    <% @solutions.each do |solution|%>
+      <p><%= link_to solution.body, lecture_task_solution_path(@lecture, @task, solution) %></p>
+    <% end %>

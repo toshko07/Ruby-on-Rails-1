@@ -1,0 +1,8 @@
+<h2>Task for lecture: <%= @lecture.name %></h2>
+<%= form_for [@lecture, @task] do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description%><br>
+  <%= f.submit 'Save Task'%>
+<% end %>
