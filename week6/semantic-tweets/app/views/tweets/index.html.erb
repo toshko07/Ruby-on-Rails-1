@@ -1,0 +1,5 @@
+<% @tweets.each do |tweet| %>
+  <h1><%= tweet['user']['name'] %></h1>
+  <p><%= tweet['text'] %></p>
+  <hr>
+<% end %>
