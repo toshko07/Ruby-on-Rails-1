@@ -4,4 +4,9 @@ module TweetsHelper
      p_tweet['source_text'] == tweet['text']
    end
  end
-end  
+
+ def get_user id
+   @tweets.select {|tweet| tweet['id'] == id.to_i }.first['user']['name']
+   end
+ end
+ 
