@@ -6,10 +6,14 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: "Logged in!"
+      redirect_to user_path, notice: "Logged in!"
     else
       render :new
     end
+  end
+
+  def user
+    @user = current_user
   end
 
   def destroy

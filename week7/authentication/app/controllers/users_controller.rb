@@ -8,10 +8,13 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_url, notice: "User was successfully created!"
-      p "user was created"
     else
       render :new
     end
+  end
+
+  def user_info
+
   end
 
   def user_params
