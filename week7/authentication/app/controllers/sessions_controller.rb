@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to user_path, notice: "Logged in!"
+      cookies[:user_email] = user.email if params[:remember_me] == "1"
     else
       render :new
     end
